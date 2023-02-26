@@ -31,6 +31,12 @@ export class World {
         this.composer.addPass(renderPass);
     }
 
+    populateWorld(populateCallbacks : any[] ) {
+        populateCallbacks.forEach(cb => {
+            cb();
+        });
+    }
+
     update() {
         window.requestAnimationFrame(() => this.update);
 
